@@ -20,36 +20,35 @@ solução final, e cada uma dessas etapas devem estar cobertas com testes automa
 Sugestão: Fazer seguindo TDD.
 '''
 
+
 class NumerosFeliz:
 
-    def numero_inteiro_positivo(self, numero:int)-> bool:
+    def numero_inteiro_positivo(self, numero: int) -> bool:
 
         if numero >= 0:
             return True
         else:
             return False
-    
-    def soma_quadrados_digitos(self,numero:int):
+
+    def soma_quadrados_digitos(self, numero: int):
         soma_das_raizes = 0
-        while (numero!=0):
+        while (numero != 0):
             digit = numero % 10
             soma_das_raizes += digit * digit
             numero = numero // 10
-            
+
         return soma_das_raizes
 
-  
-    def numero_feliz(self,numero:int)-> bool:
-        s=set()
-        s.add(numero)
+    def numero_feliz(self, numero: int) -> bool:
+        digito_usado = set()
+        digito_usado.add(numero)
         while (True):
             if (numero == 1):
                 return True
 
             numero = NumerosFeliz.soma_quadrados_digitos(self, numero)
 
-            if numero in s:
+            if numero in digito_usado:
                 return False
 
-            s.add(numero)
-
+            digito_usado.add(numero)

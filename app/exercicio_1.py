@@ -11,6 +11,7 @@ Qual é o valor da soma de todos os números múltiplos de (3 ou 5) e 7 de núme
 '''
 import unittest
 
+
 class Multiplos:
 
     def multiplo_tres_ou_cinco(valor_base):
@@ -21,7 +22,6 @@ class Multiplos:
                 valor_inicial += numero_atual
 
         return valor_inicial
-
 
     def multiplo_tres_e_cinco(valor_base):
         valor_inicial = 0
@@ -36,7 +36,7 @@ class Multiplos:
         valor_inicial = 0
 
         for numero_atual in range(valor_base):
-            if (numero_atual % 3 == 0 or numero_atual % 5 == 0) and numero_atual%7==0:
+            if (numero_atual % 3 == 0 or numero_atual % 5 == 0) and numero_atual % 7 == 0:
                 valor_inicial += numero_atual
 
         return valor_inicial
