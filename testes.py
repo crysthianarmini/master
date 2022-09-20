@@ -1,6 +1,7 @@
 import unittest
 from app.exercicio_1 import Multiplos
 from app.exercicio_2 import NumerosFeliz
+from app.exercicio_3 import PalavrasEmNumeros
 
 
 class TestesExercicio1(unittest.TestCase):
@@ -44,6 +45,25 @@ class TestesExercicio2(unittest.TestCase):
 
 
 class TestesExercicio3(unittest.TestCase):
+
+    def testando_desconsiderar_caracteres(self):
+        resultado_teste = PalavrasEmNumeros.desconsiderar_caracteres(
+            'Joao154Jose$%')
+        resultado_esperado = 'JoaoJose'
+        self.assertEqual(resultado_teste, resultado_esperado)
+
+    def testando_palavra_em_valor_numerico(self):
+        resultado_teste = PalavrasEmNumeros.valor_resultante_caracteres('a')
+        resultado_esperado = 1
+        self.assertEqual(resultado_teste, resultado_esperado)
+
+
+
+
+
+
+
+class TestesExercicio4(unittest.TestCase):
     pass
 
 

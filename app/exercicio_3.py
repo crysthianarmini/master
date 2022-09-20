@@ -17,3 +17,29 @@ Não há a necessidade de ter interação com o usuário para requisitar a palav
 automatizados.
 
 '''
+import re
+import app.helpers as helpers
+
+
+class PalavrasEmNumeros:
+
+    def desconsiderar_caracteres(palavra: str) -> str:
+        palavra = re.sub('[0-9]', '', palavra)
+        palavra = ''.join(char for char in palavra if char.isalnum())
+
+        return palavra
+
+    def valor_resultante_caracteres(palavra: str) -> int:
+        soma_caracteres = 0
+        for letra in palavra:
+            valor_numerico = helpers.valores_alfabeto[letra]
+            soma_caracteres += valor_numerico
+
+        return soma_caracteres
+    
+    #Prima ou não;
+    
+    #Feliz ou não;
+    
+    #Múltipla de 3 ou 5;
+
