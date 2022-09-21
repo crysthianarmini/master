@@ -9,9 +9,6 @@ Qual é o valor da soma de todos os números múltiplos de 3 ou 5 de números na
 Qual é o valor da soma de todos os números múltiplos de 3 e 5 de números naturais abaixo de 1000?
 Qual é o valor da soma de todos os números múltiplos de (3 ou 5) e 7 de números naturais abaixo de 1000?
 '''
-import unittest
-
-
 class Multiplos:
 
     def multiplo_tres_ou_cinco(valor_base):

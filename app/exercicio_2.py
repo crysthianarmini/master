@@ -25,19 +25,19 @@ class NumerosFeliz:
 
     def numero_inteiro_positivo(self, numero: int) -> bool:
 
-        if numero >= 0:
+        if numero > 0:
             return True
         else:
             return False
 
-    def soma_quadrados_digitos(self, numero: int):
-        soma_das_raizes = 0
-        while (numero != 0):
+    def soma_quadrados_digitos(self, numero: int) -> int:
+        soma_digitos = 0
+        while (numero > 0):
             digit = numero % 10
-            soma_das_raizes += digit * digit
+            soma_digitos += digit * digit
             numero = numero // 10
 
-        return soma_das_raizes
+        return soma_digitos
 
     def numero_feliz(self, numero: int) -> bool:
         digito_usado = set()
@@ -45,10 +45,7 @@ class NumerosFeliz:
         while (True):
             if (numero == 1):
                 return True
-
             numero = NumerosFeliz.soma_quadrados_digitos(self, numero)
-
             if numero in digito_usado:
                 return False
-
             digito_usado.add(numero)
