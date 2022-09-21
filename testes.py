@@ -57,11 +57,25 @@ class TestesExercicio3(unittest.TestCase):
         resultado_esperado = 1
         self.assertEqual(resultado_teste, resultado_esperado)
 
+    def testando_se_retorna_um_numero_primo(self):
+        resultado_teste = PalavrasEmNumeros.verifica_numero_primo(11)
+        self.assertEqual(resultado_teste, True)
+    
+    def testando_se_nao_retorna_numero_primo(self):
+        resultado_teste_false = PalavrasEmNumeros.verifica_numero_primo(15)
+        self.assertEqual(resultado_teste_false, False)
 
+        resultado_teste_negativo = PalavrasEmNumeros.verifica_numero_primo(-11)
+        self.assertEqual(resultado_teste_negativo, False)
 
-
-
-
+    def testando_numero_feliz(self):
+        resultado_teste = PalavrasEmNumeros.numero_feliz(7)
+        self.assertEqual(resultado_teste, True)
+    
+    def testando_numero_multiplido_de_tres_ou_cinco(self):
+        resultado_teste = PalavrasEmNumeros.verifica_multiplos(15)
+        self.assertEqual(resultado_teste, True)
+        
 
 class TestesExercicio4(unittest.TestCase):
     pass

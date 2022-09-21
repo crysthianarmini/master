@@ -19,6 +19,8 @@ automatizados.
 '''
 import re
 import app.helpers as helpers
+import app.exercicio_2 as exercicio2
+import app.exercicio_1 as exercicio1
 
 
 class PalavrasEmNumeros:
@@ -37,9 +39,38 @@ class PalavrasEmNumeros:
 
         return soma_caracteres
     
-    #Prima ou não;
+
+    def verifica_numero_primo(valor:int)->bool:
+        if valor < 0:
+            return False
+        if valor == 0 or valor == 1:
+            return False
+        else:
+            if valor == 2:
+                return True
+            elif valor % 2 == 0:
+                return False
+            else:
+                x = 3
+                while(x < valor):
+                    if valor % x == 0:
+                        break
+                    x = x + 2
+                if x == valor:
+                    return True
+                else:
+                    return False
+
+
+
+    def numero_feliz(valor:int) -> bool:
+        verificar = exercicio2.NumerosFeliz()
+        return verificar.numero_feliz(valor)
     
-    #Feliz ou não;
-    
-    #Múltipla de 3 ou 5;
+
+    def verifica_multiplos(valor:int) -> bool:
+        if valor % 3 == 0 and valor % 5 == 0:
+            return True
+        else:
+            return False
 
