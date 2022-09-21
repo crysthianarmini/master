@@ -20,20 +20,28 @@ class TestesExercicio1(unittest.TestCase):
         expected = 33173
         self.assertEqual(actual, expected)
 
+    def testando_valor_negativo_multiplos(self):
+        actual = Multiplos.multiplo_tres_e_cinco(-10)
+        self.assertEqual(actual, 0)
+
+        actual = Multiplos.multiplo_tres_ou_cinco(-10)
+        self.assertEqual(actual, 0)
+
+        actual = Multiplos.multiplo_tres_ou_cinco_e_sete(-10)
+        self.assertEqual(actual, 0)
+
 
 class TestesExercicio2(unittest.TestCase):
 
-    def testando_numero_inteiro_positivo(self):
-        resultado_verdadeiro = NumerosFeliz.numero_inteiro_positivo(self, 1)
-        self.assertEqual(resultado_verdadeiro, True)
-
-        resultado_falso = NumerosFeliz.numero_inteiro_positivo(self, -1)
-        self.assertEqual(resultado_falso, False)
-
-    def testando_soma_quadrados_digitos(self):
+    def testando_soma_quadrados_digitos_verdadeiro(self):
         resultado_verdadeiro = NumerosFeliz.soma_quadrados_digitos(self, 22)
         teste_verdadeiro = 8
         self.assertEqual(resultado_verdadeiro, teste_verdadeiro)
+    
+    def testando_soma_quadrados_digitos_falso(self):
+        resultado_verdadeiro = NumerosFeliz.soma_quadrados_digitos(self, -22)
+        teste_falso = 0
+        self.assertEqual(resultado_verdadeiro, teste_falso)
 
     def testando_numero_feliz_falso(self):
         verifica_numero_feliz = NumerosFeliz.numero_feliz(self, 22)
@@ -53,8 +61,13 @@ class TestesExercicio3(unittest.TestCase):
         self.assertEqual(resultado_teste, resultado_esperado)
 
     def testando_palavra_em_valor_numerico(self):
-        resultado_teste = PalavrasEmNumeros.valor_resultante_caracteres('a')
-        resultado_esperado = 1
+        resultado_teste = PalavrasEmNumeros.valor_resultante_caracteres('abacate')
+        resultado_esperado = 33
+        self.assertEqual(resultado_teste, resultado_esperado)
+    
+    def testando_retorno_numerico_quando_tem_numero_na_palavra(self):
+        resultado_teste = PalavrasEmNumeros.valor_resultante_caracteres('abacate97')
+        resultado_esperado = 33
         self.assertEqual(resultado_teste, resultado_esperado)
 
     def testando_se_retorna_um_numero_primo(self):
@@ -64,7 +77,8 @@ class TestesExercicio3(unittest.TestCase):
     def testando_se_nao_retorna_numero_primo(self):
         resultado_teste_false = PalavrasEmNumeros.verifica_numero_primo(15)
         self.assertEqual(resultado_teste_false, False)
-
+    
+    def testando_se_nao_retorna_numero_primo_quando_valor_negativo(self):
         resultado_teste_negativo = PalavrasEmNumeros.verifica_numero_primo(-11)
         self.assertEqual(resultado_teste_negativo, False)
 
@@ -72,9 +86,13 @@ class TestesExercicio3(unittest.TestCase):
         resultado_teste = PalavrasEmNumeros.numero_feliz(7)
         self.assertEqual(resultado_teste, True)
 
-    def testando_numero_multiplido_de_tres_ou_cinco(self):
+    def testando_numero_multiplo_de_tres_ou_cinco(self):
         resultado_teste = PalavrasEmNumeros.verifica_multiplos(15)
         self.assertEqual(resultado_teste, True)
+    
+    def testanto_caracteristicas_do_numero(self):
+        numero_primo = PalavrasEmNumeros.verifica_caracteristicas_numero(5)
+        self.assertEqual(numero_primo, '- Numero é primo - Numero é multiplo de 3 ou 5 ')
 
 
 class TestesExercicio4(unittest.TestCase):

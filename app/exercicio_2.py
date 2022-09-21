@@ -23,12 +23,6 @@ Sugestão: Fazer seguindo TDD.
 
 class NumerosFeliz:
 
-    def numero_inteiro_positivo(self, numero: int) -> bool:
-
-        if numero > 0:
-            return True
-        else:
-            return False
 
     def soma_quadrados_digitos(self, numero: int) -> int:
         soma_digitos = 0

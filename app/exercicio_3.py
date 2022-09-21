@@ -20,7 +20,6 @@ automatizados.
 import re
 import app.helpers as helpers
 import app.exercicio_2 as exercicio2
-import app.exercicio_1 as exercicio1
 
 
 class PalavrasEmNumeros:
@@ -33,14 +32,14 @@ class PalavrasEmNumeros:
 
     def valor_resultante_caracteres(palavra: str) -> int:
         soma_caracteres = 0
+        palavra = PalavrasEmNumeros.desconsiderar_caracteres(palavra)
         for letra in palavra:
             valor_numerico = helpers.valores_alfabeto[letra]
             soma_caracteres += valor_numerico
 
         return soma_caracteres
-    
 
-    def verifica_numero_primo(valor:int)->bool:
+    def verifica_numero_primo(valor: int) -> bool:
         if valor < 0:
             return False
         if valor == 0 or valor == 1:
@@ -52,7 +51,7 @@ class PalavrasEmNumeros:
                 return False
             else:
                 x = 3
-                while(x < valor):
+                while (x < valor):
                     if valor % x == 0:
                         break
                     x = x + 2
@@ -61,16 +60,29 @@ class PalavrasEmNumeros:
                 else:
                     return False
 
-
-
-    def numero_feliz(valor:int) -> bool:
+    def numero_feliz(valor: int) -> bool:
         verificar = exercicio2.NumerosFeliz()
         return verificar.numero_feliz(valor)
-    
 
-    def verifica_multiplos(valor:int) -> bool:
-        if valor % 3 == 0 and valor % 5 == 0:
+    def verifica_multiplos(valor: int) -> bool:
+        if valor % 3 == 0 or valor % 5 == 0:
             return True
         else:
             return False
+    
+    def verifica_caracteristicas_numero(numero:int) -> str:
+        response = ''
+        if(PalavrasEmNumeros.verifica_numero_primo(numero) is True):
+            response += '- Numero é primo '
+
+        if(PalavrasEmNumeros.verifica_multiplos(numero)is True):
+            response += '- Numero é multiplo de 3 ou 5 '
+
+        if(PalavrasEmNumeros.numero_feliz(numero)is True):
+            response += '- Numero é feliz '
+
+        return response
+
+
+
 

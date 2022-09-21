@@ -37,8 +37,3 @@ class Multiplos:
                 valor_inicial += numero_atual
 
         return valor_inicial
-
-
-'''
- RUN: python3 -m unittest exercicio_1.py
-'''
