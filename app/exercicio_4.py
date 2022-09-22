@@ -28,6 +28,13 @@ class Correio:
     
     def __init__(self,cep:str) -> float:
         self.cep = cep
-        return 10.5
 
+    
+class CalculoFrete:
+
+    def __init__(self, correio=Correio) -> None:
+        pass
+
+    def valor_frete(carrinho:Cart):
+        return 10.5 # Valor setado para fins de exemplo
 
